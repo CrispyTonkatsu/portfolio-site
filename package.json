@@ -24,7 +24,8 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "tailwindcss": "^4.3.2",
-    "vite-plugin-qrcode": "^0.4.1"
+    "vite-plugin-qrcode": "^0.4.1",
+    "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.5/wasm-pkg.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

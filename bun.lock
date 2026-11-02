@@ -10,6 +10,7 @@
         "daisyui": "^5.6.16",
         "date-fns": "^4.4.0",
         "fluid-tailwind": "^1.0.4",
+        "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.5/wasm-pkg.tgz",
         "katex": "^0.18.4",
         "react": "^19.2.7",
         "react-dom": "^19.2.7",
@@ -552,6 +553,8 @@
     "vite-plugin-qrcode": ["vite-plugin-qrcode@0.4.1", "", { "dependencies": { "uqr": "^0.1.2" }, "peerDependencies": { "vite": ">=3" } }, "sha512-t3gdCbn/a2HHLK3M8bUrQ+4c+I0YQGJ/STxAL9eI6TBnfdeM/CJr3HctvOb7UYhEtWxHs5xZWpz7kYnRd5w+rA=="],
 
     "web-namespaces": ["web-namespaces@2.0.1", "", {}, "sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ=="],
+
+    "webcart": ["webcart@https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.5/wasm-pkg.tgz", {}, "sha512-3y5CP53VxozSuvt26mr7ijoHNxqIQrGLPCVSW59bqWx3bdqzS2ZDUOsTEd+sM+yha3G5+4C0ECceO9NvReg5Jw=="],
 
     "yallist": ["yallist@3.1.1", "", {}, "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="],
 
