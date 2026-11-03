@@ -3,7 +3,6 @@ import Projects from "../components/Projects";
 import { useRef } from "react";
 import JumperFab from "./JumperFab";
 import Bio from "./Bio";
-import tempImg from "../content/contact-pic.jpg"
 import Webcart from "./apps/Webcart";
 
 class SpecializedLandingData {
@@ -15,9 +14,7 @@ class SpecializedLandingData {
 const landingPages = new Map<string, SpecializedLandingData>([
   ["sim", {
     bio: (<Bio title="Simulation Engineer" />),
-    highlight: (<img
-      src={tempImg}
-    />),
+    highlight: (<Webcart />),
     projects: ["idol-on-duty", "hockey-stop"]
   }],
 
