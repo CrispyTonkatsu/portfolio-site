@@ -20,7 +20,9 @@ export default function Projects({ selectedProjects }: ProjectsProps) {
       {
         toDisplay.map((project: ProjectCardProps) => {
           const output = (
-            <div className="py-2">
+            <div
+              className="py-2"
+              key={project.projectName} >
               <ProjectCard
                 {...project}
               />

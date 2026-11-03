@@ -12,7 +12,7 @@ export default function Bio({ title }: BioProps) {
   return (
     <>
       <div className="py-4">
-        <text className="text-primary text-md md:text-xl font-light">{title}</text>
+        <div className="text-primary text-md md:text-xl font-light">{title}</div>
       </div>
 
       <div className="inline text-sm md:text-lg">

@@ -33,7 +33,7 @@ export default function ProjectCard({ projectName, linkSection = undefined, team
     </Link>)
   );
 
-  const dateFormat = "Y-MMM";
+  const dateFormat = "y-MMM";
   const startString = format(start, dateFormat);
   const endString = format(end, dateFormat);
 
@@ -96,7 +96,10 @@ export default function ProjectCard({ projectName, linkSection = undefined, team
               {
                 images.map(image => {
                   return (
-                    <div id={image.link} className="carousel-item w-full">
+                    <div
+                      id={image.link}
+                      className="carousel-item w-full"
+                      key={image.link}>
                       <img
                         src={image.link}
                         alt={image.alt}
@@ -112,7 +115,9 @@ export default function ProjectCard({ projectName, linkSection = undefined, team
                   {
                     images.map((image, index) => {
                       return (
-                        <a href={"#" + image.link} className="btn btn-circle btn-neutral btn-xs" >
+                        <a
+                          href={"#" + image.link} className="btn btn-circle btn-neutral btn-xs"
+                          key={image.link} >
                           {index + 1}
                         </a>
                       );

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import JumperFab from "./JumperFab";
 import Bio from "./Bio";
 import tempImg from "../content/contact-pic.jpg"
+import Webcart from "./apps/Webcart";
 
 class SpecializedLandingData {
   bio: React.ReactNode
@@ -17,12 +18,12 @@ const landingPages = new Map<string, SpecializedLandingData>([
     highlight: (<img
       src={tempImg}
     />),
-    projects: ["idol-on-duty", "idol-on-duty"]
+    projects: ["idol-on-duty", "hockey-stop"]
   }],
 
   ["personal", {
     bio: (<Bio title="Personal Page" />),
-    highlight: (<>No Highlight Here</>),
+    highlight: (<Webcart />),
   }],
 ]);
 

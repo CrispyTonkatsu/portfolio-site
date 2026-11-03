@@ -48,7 +48,7 @@ export default function Navbar() {
                 {
                   pages.map(page => {
                     return (
-                      <li>
+                      <li key={page.link}>
                         <PageButton
                           {...page}
                         />
@@ -63,7 +63,9 @@ export default function Navbar() {
           {
             pages.map(page => {
               return (
-                <li className="hidden md:inline-flex">
+                <li
+                  key={page.link}
+                  className="hidden md:inline-flex">
                   <PageButton
                     {...page}
                   />

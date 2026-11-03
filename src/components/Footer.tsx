@@ -64,7 +64,9 @@ export default function Footer() {
         {
           socials.map(social => {
             return (
-              <SocialButton {...social} />
+              <SocialButton {...social}
+                key={social.link}
+              />
             );
           })
         }
