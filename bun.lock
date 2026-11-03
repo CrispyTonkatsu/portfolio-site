@@ -20,7 +20,7 @@
         "remark-math": "^6.0.0",
         "tailwindcss": "^4.3.4",
         "vite-plugin-qrcode": "^0.4.1",
-        "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.10/wasm-pkg.tgz",
+        "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.11/wasm-pkg.tgz",
       },
       "devDependencies": {
         "@babel/core": "^7.29.7",
@@ -540,7 +540,7 @@
 
     "web-namespaces": ["web-namespaces@2.0.1", "", {}, "sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ=="],
 
-    "webcart": ["webcart@https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.10/wasm-pkg.tgz", {}, "sha512-XrLBwKBFvy4443gwGEqNHZZDmaa7W83Mc36XAnGIMRJJQGcsMYrDAW5xwNKz7OfBBo7RGYb56Rcba1SouCSCwg=="],
+    "webcart": ["webcart@https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.11/wasm-pkg.tgz", {}, "sha512-Bm0LzQzWPFOzM4DsJYL8m10aj5KWisd2Y2SfRpcyyaZnyN7a/redxT5Ngw5lp76AzNnzGyflFEhziP4a1ANz5w=="],
 
     "yallist": ["yallist@3.1.1", "", {}, "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="],
 
