@@ -1,42 +1,35 @@
-import { useEffect, useState } from "react";
-import init from "webcart";
+import { useEffect } from "react";
+import init, { main } from "webcart";
 
 export default function Webcart() {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    let isMounted = true;
+    const canvasElement = document.getElementById("webcart-canvas");
 
-    async function loadWasm() {
+    if (!canvasElement) {
+      console.warn("Canvas not found yet, retrying...");
+      return;
+    }
+
+    async function startWasm() {
       try {
         await init();
-
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
-      catch (error) {
-        console.error("Failed to load webcart: ", error);
+        main();
+      } catch (error) {
+        console.error("Failed to start wasm: ", error)
       }
     }
 
-    loadWasm();
+    startWasm();
+  }, [])
 
-    return () => {
-      isMounted = false;
-    }
-  }, []);
 
   return (
     <div>
-      {
-        isLoading
-          ? <div className="font-bold"> Loading Demo</div>
-          : <canvas
-            id="webcart-canvas"
-            className="w-full h-full block"
-          />
-      }
+      Demo moment
+      <canvas
+        id="webcart-canvas"
+        className="w-full h-full block"
+      />
     </div>
   );
 }
