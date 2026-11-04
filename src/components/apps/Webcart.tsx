@@ -4,13 +4,17 @@ import { useEffect, useRef } from 'react';
 import { CartPole } from 'webcart';
 
 export default function Webcart() {
-  const cart = useRef<CartPole | null>(null)
+  const cart = useRef<CartPole | null>(null);
 
   useEffect(() => {
-    cart.current = CartPole.new()
+    if (cart.current) {
+      cart.current = CartPole.new();
+    }
 
     return () => {
-      cart.current.free()
+      if (cart.current) {
+        cart.current.free();
+      }
     };
   }, []);
 
