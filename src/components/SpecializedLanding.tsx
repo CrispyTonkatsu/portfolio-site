@@ -1,9 +1,10 @@
 import { Navigate, useParams } from "react-router-dom";
 import Projects from "../components/Projects";
-import { useRef } from "react";
+import { lazy, Suspense, useRef } from "react";
 import JumperFab from "./JumperFab";
 import Bio from "./Bio";
-import Webcart from "./apps/Webcart";
+
+const Webcart = lazy(() => import("./apps/Webcart.tsx"));
 
 class SpecializedLandingData {
   bio: React.ReactNode
@@ -52,7 +53,9 @@ export default function SpecializedLanding() {
         </div>
 
         <div className="flex-1 pt-4 md:pt-0">
-          {pageData.highlight}
+          <Suspense>
+            {pageData.highlight}
+          </Suspense>
         </div>
       </div>
 

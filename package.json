@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.4",
     "daisyui": "^5.7.50",
@@ -24,8 +26,9 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "tailwindcss": "^4.3.4",
+    "three": "^0.187.0",
     "vite-plugin-qrcode": "^0.4.1",
-    "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/download/v0.0.11/wasm-pkg.tgz"
+    "webcart": "https://github.com/CrispyTonkatsu/webcart/releases/latest/download/engine-pkg-latest.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -34,10 +37,15 @@
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
     "@vitejs/plugin-react": "^6.2.1",
     "babel-plugin-react-compiler": "^1.0.0",
+    "esbuild": "^0.28.2",
     "oxlint": "^1.91.0",
+    "rollup": "^4.67.4",
     "typescript": "~6.0.3",
-    "vite": "^8.3.5"
+    "vite": "^8.3.5",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.6.0"
   }
 }
