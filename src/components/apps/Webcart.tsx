@@ -3,6 +3,7 @@ import { OrbitControls } from '@react-three/drei'
 import { useEffect, useRef } from 'react';
 import { CartPole } from 'webcart';
 import type { Mesh } from 'three';
+import { randFloat } from 'three/src/math/MathUtils.js';
 
 function Cart() {
   const cartRef = useRef<CartPole>(null);
@@ -45,21 +46,59 @@ function Cart() {
     meshRef.current.rotation.z = cart.theta;
   });
 
+  function onClick() {
+    let cart = cartRef.current;
+
+    if (cart == null) {
+      return;
+    }
+
+    cart.apply_tip_impulse(randFloat(-3, 3));
+  }
+
   return (
-    <mesh ref={meshRef}>
-      <boxGeometry />
-      <meshStandardMaterial />
-    </mesh>
+    <>
+      <mesh ref={meshRef} castShadow onClick={onClick}>
+        <boxGeometry args={[0.5, 0.2, 0.5]} />
+        <meshStandardMaterial color={0x011C27} />
+
+        <mesh position={[0, 0.5, 0]}>
+          <boxGeometry args={[0.2, 1, 0.2]} />
+          <meshStandardMaterial color={0xD81E5B} />
+        </mesh>
+      </mesh>
+
+    </>
   );
 }
 
 export default function Webcart() {
   return (
-    <div className='flex flex-col w-full h-full '>
-      <Canvas>
-        <Cart />
+    <div className='flex flex-col w-full h-full bg-base-100'>
+      <div className='p-2 text-center font-bold'>
+        Live Inverted Pendulum
+      </div>
 
+      <Canvas camera={{ position: [2, 4, 3] }} shadows>
         <OrbitControls />
+
+        <ambientLight color={0xFDF0D5} intensity={0.2} />
+        <directionalLight color={0xFDF0D5} intensity={5} position={[0, 5, 10]}
+          castShadow shadow-mapSize={[1024, 1024]}
+          shadow-camera-near={0.5}
+          shadow-camera-far={50}
+          shadow-camera-left={-15}
+          shadow-camera-right={15}
+          shadow-camera-top={15}
+          shadow-camera-bottom={-15}
+        />
+
+        <Cart />
+        <mesh position={[0, -1.0, 0]} receiveShadow>
+          <boxGeometry args={[20, 1, 20]} />
+          <meshStandardMaterial color={0xFDF0D5} />
+        </mesh>
+
       </Canvas>
     </div>
   );
