@@ -20,7 +20,7 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          name = "shorthop.app flake";
+          name = "portfolio flake";
 
           packages = with pkgs; [
             # Runtime (only for the local development)

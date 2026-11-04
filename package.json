@@ -1,5 +1,5 @@
 {
-  "name": "shorthop.dev",
+  "name": "edonosomansilla.dev",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -36,7 +36,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.2.1",
     "babel-plugin-react-compiler": "^1.0.0",
-    "oxlint": "^1.90.0",
+    "oxlint": "^1.91.0",
     "typescript": "~6.0.3",
     "vite": "^8.3.5"
   }

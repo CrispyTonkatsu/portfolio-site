@@ -57,7 +57,7 @@ export default function Footer() {
   return (
     <div className="flex flex-col bg-base-300 p-8">
       <div className="text-xl text-info font-light italic p-2">
-        shorthop.dev
+        Edgar Jose Donoso Mansilla
       </div>
 
       <div className="flex flex-row p-2">
