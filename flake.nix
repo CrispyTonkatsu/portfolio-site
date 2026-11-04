@@ -38,6 +38,10 @@
 
             # Deployment
             firebase-tools
+
+            # Compression
+            imagemagick
+            ffmpeg
           ];
         };
       }

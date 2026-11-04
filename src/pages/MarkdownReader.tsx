@@ -1,23 +1,34 @@
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
-import rehypeHighlight from "rehype-highlight";
-import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
-
-const markdownFiles = import.meta.glob('../content/**/*.md', { query: '?raw', eager: true }) as Record<string, string | { default: string }>;
+import rehypeKatex from "rehype-katex";
+import rehypeHighlight from "rehype-highlight";
 
 export default function MarkdownReader() {
   const { type, file } = useParams();
+  const [content, setContent] = useState("Loading...");
 
-  const filePath = `../content/${type}/${file}.md`;
+  useEffect(() => {
+    async function loadMarkdown() {
+      try {
+        const response = await fetch(`/markdown/${type}/${file}.md`);
 
-  // TODO: Implement async loading for smaller bundle sizes
+        if (!response.ok) {
+          setContent("404 - Post not found.");
+          return;
+        }
 
-  const rawModule = markdownFiles[filePath];
+        const text = await response.text();
+        setContent(text);
 
-  const content = typeof rawModule === 'string'
-    ? rawModule
-    : rawModule?.default || "404 - Post not found";
+      } catch {
+        setContent("Error loading content.");
+      }
+    }
+
+    loadMarkdown();
+  }, [type, file]);
 
   return (
     <div className="prose bg-base-200 p-4 md:p-8">

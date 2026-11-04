@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to='landing/sim' replace />
+        element: <SpecializedLanding />
       },
       {
         path: 'landing/:type',

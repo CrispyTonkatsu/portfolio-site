@@ -1,5 +1,4 @@
 import { SocialButton, socials } from "../components/Footer";
-import profileImg from "../content/contact-pic.jpg"
 
 export default function Contact() {
   return (
@@ -48,7 +47,7 @@ export default function Contact() {
       <div>
         <img
           className="object-cover object-right aspect-square max-h-100"
-          src={profileImg}
+          src="/contact-pic.webp"
         />
       </div>
     </div >

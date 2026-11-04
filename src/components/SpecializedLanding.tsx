@@ -4,31 +4,33 @@ import { lazy, Suspense, useRef } from "react";
 import JumperFab from "./JumperFab";
 import Bio from "./Bio";
 
-const Webcart = lazy(() => import("./apps/Webcart.tsx"));
-
-class SpecializedLandingData {
+type SpecializedLandingData = {
   bio: React.ReactNode
-  highlight: React.ReactNode
+  highlight: React.ComponentType
   projects?: string[]
 }
+
+const Webcart = lazy(() => import('./apps/Webcart'))
+
+const defaultPage = "sim";
 
 const landingPages = new Map<string, SpecializedLandingData>([
   ["sim", {
     bio: (<Bio title="Simulation Engineer" />),
-    highlight: (<Webcart />),
+    highlight: Webcart,
     projects: ["idol-on-duty", "hockey-stop"]
   }],
 
   ["personal", {
     bio: (<Bio title="Personal Page" />),
-    highlight: (<Webcart />),
+    highlight: Webcart,
   }],
 ]);
 
 export default function SpecializedLanding() {
   const { type } = useParams();
 
-  const pageData = landingPages.get(type ?? "");
+  const pageData = landingPages.get(type ?? defaultPage);
 
   if (pageData == undefined) {
     return <Navigate to="/" />
@@ -53,8 +55,8 @@ export default function SpecializedLanding() {
         </div>
 
         <div className="flex-1 pt-4 md:pt-0">
-          <Suspense>
-            {pageData.highlight}
+          <Suspense fallback={<div>Loading Highlight</div>}>
+            <pageData.highlight />
           </Suspense>
         </div>
       </div>

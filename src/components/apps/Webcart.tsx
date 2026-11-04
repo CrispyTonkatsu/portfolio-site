@@ -7,9 +7,7 @@ export default function Webcart() {
   const cart = useRef<CartPole | null>(null);
 
   useEffect(() => {
-    if (cart.current) {
-      cart.current = CartPole.new();
-    }
+    cart.current = CartPole.new();
 
     return () => {
       if (cart.current) {
