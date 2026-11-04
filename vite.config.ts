@@ -4,9 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import babel from "@rolldown/plugin-babel";
 import { qrcode } from "vite-plugin-qrcode";
 import wasm from "vite-plugin-wasm";
-import topLevelAwait from "vite-plugin-top-level-await";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), (wasm as any)(), (topLevelAwait as any)(), qrcode(), babel({ presets: [reactCompilerPreset()] })],
+  plugins: [react(), tailwindcss(), (wasm as any)(), qrcode(), babel({ presets: [reactCompilerPreset()] })],
 });
