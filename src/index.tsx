@@ -4,8 +4,9 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import SpecializedLanding from "./components/SpecializedLanding";
 import ProjectsPage from "./pages/ProjectsPage";
-
 import { lazy, Suspense } from "react";
+import IdolOnDuty from "./content/projects/IdolOnDuty";
+
 const MarkdownReader = lazy(() => import("./pages/MarkdownReader"))
 
 export const router = createBrowserRouter([
@@ -44,6 +45,12 @@ export const router = createBrowserRouter([
             <MarkdownReader />
           </Suspense>
         )
+      },
+
+      // The projects themselves
+      {
+        path: 'idol-on-duty',
+        element: <IdolOnDuty />
       }
     ],
   },
